@@ -1,12 +1,13 @@
 # flightdata-extension
 
-Extension tag line here
+A collection of web tools for flight simulation.
 
 <br>
 
 ## Features
 
 - Extract flightradar data for use in SimBrief
+
 
 <br>
 
