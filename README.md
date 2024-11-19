@@ -6,9 +6,17 @@ A collection of web tools for flight simulation.
 
 ## Features
 
-- Extract flightradar data for use in SimBrief
+- Use Flightradar data in SimBrief
 
+    - Copy Flightradar playback data
+    <p align="left">
+        <img src="https://github.com/elecordapp/flightdata-extension/blob/main/media/examples/flightdata-extension-flightradar.png" width="480" height="300"/>
+    </p>
 
+    - Insert playback data into SimBrief
+    <p align="left">
+        <img src="https://github.com/elecordapp/flightdata-extension/blob/main/media/examples/flightdata-extension-simbrief.png" width="480" height="300"/>
+    </p>
 <br>
 
 ## Installation
