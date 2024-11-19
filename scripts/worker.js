@@ -6,7 +6,7 @@
 // context menu
 {
     const menuPattern = {
-        flightradar: "*://www.flightradar24.com/data/flights/*",
+        flightradar: "*://www.flightradar24.com/data/*",
         simbrief: "*://dispatch.simbrief.com/options/new"
     };
 
