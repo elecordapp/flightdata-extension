@@ -1,8 +1,12 @@
 # flightdata-extension
 
+Extension tag line here
+
 <br>
 
 ## Features
+
+- Extract flightradar data for use in SimBrief
 
 <br>
 
