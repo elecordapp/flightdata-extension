@@ -1,0 +1,36 @@
+{
+    "name": "flightdata",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "description": "",
+    "author": "hazzuk",
+    "homepage_url": "https://github.com/elecordapp/flightdata-extension",
+    "permissions": [
+        "contextMenus",
+        "storage"
+    ],
+    "host_permissions": [
+        "*://www.flightradar24.com/*",
+        "*://dispatch.simbrief.com/*"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{703c1df4-4e8f-4ef4-93c3-2f608a346721}",
+            "strict_min_version": "109.0"
+        }
+    },
+    "background": {
+        "service_worker": "scripts/worker.js",
+        "page": "views/firefox.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://www.flightradar24.com/*"],
+            "js": ["scripts/content/flightradar.js"]
+        },
+        {
+            "matches": ["*://dispatch.simbrief.com/*"],
+            "js": ["scripts/content/simbrief.js"]
+        }
+    ]
+}
