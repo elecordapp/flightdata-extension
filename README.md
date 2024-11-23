@@ -1,6 +1,10 @@
+<p align="left">
+    <img src="https://github.com/elecordapp/flightdata-extension/blob/main/media/icon/fd-128.png" width="90" height="90"/>
+</p>
+
 # flightdata-extension
 
-A collection of web tools for flight simulation.
+Collection of web tools for flight simulation.
 
 <br>
 

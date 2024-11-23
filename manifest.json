@@ -2,7 +2,7 @@
     "name": "flightdata",
     "version": "0.0.1",
     "manifest_version": 3,
-    "description": "",
+    "description": "Collection of web tools for flight simulation",
     "author": "hazzuk",
     "homepage_url": "https://github.com/elecordapp/flightdata-extension",
     "permissions": [
@@ -32,5 +32,19 @@
             "matches": ["*://dispatch.simbrief.com/*"],
             "js": ["scripts/content/simbrief.js"]
         }
-    ]
+    ],
+    "action": {
+        "default_icon": {
+            "16": "media/icon/fd-16.png",
+            "32": "media/icon/fd-32.png",
+            "48": "media/icon/fd-48.png",
+            "128": "media/icon/fd-128.png"
+        }
+    },
+    "icons": {
+        "128": "media/icon/fd-128.png",
+        "48": "media/icon/fd-48.png",
+        "32": "media/icon/fd-32.png",
+        "16": "media/icon/fd-16.png"
+    }
 }
