@@ -35,6 +35,7 @@ jobs:
           rm -rf .github
           rm -f cliff.toml
           mv LICENSE LICENSE.txt
+          rm -rf media/examples
 
       - name: Copy files separately
         run: |
