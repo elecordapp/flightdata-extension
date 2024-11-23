@@ -16,6 +16,8 @@ function main() {
             reg: document.getElementById('reg'),
         };
 
+        const inputFillColor = '#ffdc5759';
+
         // retrieve storage data
         chrome.storage.local.get("flightData", (result) => {
 
@@ -29,10 +31,19 @@ function main() {
                 {
                     // enter input values
                     simbrief.airline.value = result.flightData.airline;
+                    simbrief.airline.style.backgroundColor = inputFillColor;
+
                     simbrief.number.value = result.flightData.number;
+                    simbrief.number.style.backgroundColor = inputFillColor;
+
                     simbrief.origin.value = result.flightData.origin;
+                    simbrief.origin.style.backgroundColor = inputFillColor;
+
                     simbrief.dest.value = result.flightData.dest;
+                    simbrief.dest.style.backgroundColor = inputFillColor;
+
                     simbrief.reg.value = result.flightData.reg;
+                    simbrief.reg.style.backgroundColor = inputFillColor;
 
                     // simbrief auto convert to ICAO
                     {
