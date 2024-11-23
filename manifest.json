@@ -1,6 +1,6 @@
 {
     "name": "flightdata",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "manifest_version": 3,
     "description": "Collection of web tools for flight simulation",
     "author": "hazzuk",
