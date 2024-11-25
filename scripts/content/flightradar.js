@@ -11,7 +11,7 @@ function main() {
         number: "1234",
         origin: "BBB",
         dest: "CCC",
-        reg: "DDD00",
+        callsign: "DDD00",
     };
 
     function getFlightData() {
@@ -33,16 +33,16 @@ function main() {
             console.log(`number: ${flightData.number}`);
         }
 
-        // flight registration
+        // flight callsign
         {
             let smallText = flightRadar.header.querySelector('small').textContent
-            flightData.reg = smallText.replace('/ ', '');
-            console.log(`reg: ${flightData.reg}`);
+            flightData.callsign = smallText.replace('/ ', '');
+            console.log(`callsign: ${flightData.callsign}`);
 
             // flight airline
             {
                 // extracts characters from index 0 up to index 3
-                flightData.airline = flightData.reg.substring(0, 3);
+                flightData.airline = flightData.callsign.substring(0, 3);
                 console.log(`airline: ${flightData.airline}`);
             }
         }
