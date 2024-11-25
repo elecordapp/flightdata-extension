@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.1 - 2024-11-25
+
+### Bug Fixes
+
+- fix(simbrief): swap reg to callsign
+
+### Documentation
+
+- doc(examples): new simbrief highlights/inputs
+
+### Miscellaneous Tasks
+
+- chore(github): remove example images from package
+
+### Pull Requests
+
+- Merge pull request #2 from elecordapp/simbrief-callsign
+
 ## 1.0.0 - 2024-11-23
 
 ### Bug Fixes

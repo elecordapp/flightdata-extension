@@ -5,9 +5,15 @@
 # `git cliff --tag 1.2.3 -o CHANGELOG.md`
 # `chore(release): prepare for v1.2.3`
 
+# Recognise pull requests
+# commit_parsers = [
+#	{ message = "^Merge", group = "Pull Requests" },
+
 # [remote.github]
 # owner = ""
 # repo = ""
+
+# ---
 
 [changelog]
 # template for the changelog header
@@ -47,6 +53,7 @@ filter_unconventional = false
 split_commits = false
 # regex for parsing and grouping commits
 commit_parsers = [
+    { message = "^Merge", group = "Pull Requests" },
     { message = "^feat", group = "Features" },
     { message = "^fix", group = "Bug Fixes" },
     { message = "^doc", group = "Documentation" },
