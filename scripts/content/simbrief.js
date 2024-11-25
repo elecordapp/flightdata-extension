@@ -13,7 +13,7 @@ function main() {
             number: document.getElementById('fltnum'),
             origin: document.getElementById('orig'),
             dest: document.getElementById('dest'),
-            reg: document.getElementById('reg'),
+            callsign: document.getElementById('callsign'),
         };
 
         const inputFillColor = '#ffdc5759';
@@ -42,8 +42,8 @@ function main() {
                     simbrief.dest.value = result.flightData.dest;
                     simbrief.dest.style.backgroundColor = inputFillColor;
 
-                    simbrief.reg.value = result.flightData.reg;
-                    simbrief.reg.style.backgroundColor = inputFillColor;
+                    simbrief.callsign.value = result.flightData.callsign;
+                    simbrief.callsign.style.backgroundColor = inputFillColor;
 
                     // simbrief auto convert to ICAO
                     {
