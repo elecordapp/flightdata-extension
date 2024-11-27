@@ -6,11 +6,18 @@
 
 Collection of web tools for flight simulation.
 
+<a href="https://chromewebstore.google.com/detail/flightdata/oilmpigpkhjgmohnphinocoefomlafol" target="_blank">
+    <img alt="Chrome Web Store Version" src="https://img.shields.io/chrome-web-store/v/oilmpigpkhjgmohnphinocoefomlafol?style=for-the-badge&logo=googlechrome&logoColor=%23fff">
+</a>
+<a href="https://addons.mozilla.org/en-GB/firefox/addon/flightdata/" target="_blank">
+    <img alt="Mozilla Add-on Version" src="https://img.shields.io/amo/v/flightdata?style=for-the-badge&logo=firefoxbrowser&logoColor=%23fff&label=FIREFOX%20ADD-ONS">
+</a>
+
 <br>
 
 ## Features
 
-- Use Flightradar data in SimBrief
+- Use Flightradar data inside of SimBrief
 
     - Copy Flightradar playback data
     <p align="left">
@@ -27,7 +34,9 @@ Collection of web tools for flight simulation.
 
 ### Extensions Stores
 
-Not yet published
+- [Chrome Web Store](https://chromewebstore.google.com/detail/flightdata/oilmpigpkhjgmohnphinocoefomlafol)
+
+- [Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/flightdata/)
 
 ### Manual Setup
 
