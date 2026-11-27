@@ -1,6 +1,6 @@
 {
     "name": "flightdata",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "manifest_version": 3,
     "description": "Collection of web tools for flight simulation",
     "author": "hazzuk",
@@ -25,12 +25,20 @@
     },
     "content_scripts": [
         {
-            "matches": ["*://www.flightradar24.com/*"],
-            "js": ["scripts/content/flightradar.js"]
+            "matches": [
+                "*://www.flightradar24.com/*"
+            ],
+            "js": [
+                "scripts/content/flightradar.js"
+            ]
         },
         {
-            "matches": ["*://dispatch.simbrief.com/*"],
-            "js": ["scripts/content/simbrief.js"]
+            "matches": [
+                "*://dispatch.simbrief.com/*"
+            ],
+            "js": [
+                "scripts/content/simbrief.js"
+            ]
         }
     ],
     "action": {
