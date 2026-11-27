@@ -7,59 +7,81 @@ function main() {
 
     // simbrief data
     let flightData = {
-        airline: "AAA",
-        number: "1234",
-        origin: "BBB",
-        dest: "CCC",
-        callsign: "DDD00",
+        airline: "",        // "UAL" optional
+        number: "",         // "1581" optional
+        origin: "",         // "LAX"
+        dest: "",           // "EWR"
+        callsign: "",       // "UAL1581"
     };
 
     function getFlightData() {
 
-        // flightradar elements
-        const flightRadar = {
-            header: document.getElementById('txt-playback-header'),
-            origin: document.getElementById('txt-airport-origin'),
-            dest: document.getElementById('txt-airport-dest'),
-        };
-
         // flight number
         {
-            // extract only the main text (ignoring child elements and whitespace)
-            let mainText = flightRadar.header.firstChild.nodeValue.trim();
+            // find flight number link, e.g. "/data/flights/ua1581"
+            const flightLink = document.querySelector('a[href*="/data/flights/"]');
 
-            // extract the flight number (removing the prefix and any non-digits)
-            flightData.number = mainText.replace('Playback of flight ', '').replace(/[^\d]/g, '');
+            if (flightLink === null) {
+                console.warn('no flight link found');
+            } else {
+                const flightNumberSlug = flightLink.getAttribute('href').split('/').pop();
+
+                // extract the flight number (removing the prefix and any non-digits)
+                flightData.number = flightNumberSlug.replace(/[^\d]/g, '');
+            }
+
             console.log(`number: ${flightData.number}`);
         }
 
         // flight callsign
         {
-            let smallText = flightRadar.header.querySelector('small').textContent
-            flightData.callsign = smallText.replace('/ ', '');
-            console.log(`callsign: ${flightData.callsign}`);
+            // find related call sign element
+            const relatedCallsignEl = document.getElementById('flight-related-title-callsign');
 
-            // flight airline
-            {
-                // extracts characters from index 0 up to index 3
-                flightData.airline = flightData.callsign.substring(0, 3);
-                console.log(`airline: ${flightData.airline}`);
+            if (relatedCallsignEl === null || relatedCallsignEl.firstChild === null) {
+                console.warn('no related call sign element found');
+            } else {
+                flightData.callsign = relatedCallsignEl.firstChild.textContent.trim(); // "UAL1581"
             }
+
+            console.log(`callsign: ${flightData.callsign}`);
         }
 
-        // flight origin
+        // flight airline
         {
-            let originText = flightRadar.origin.querySelector('small').textContent;
-            // remove parentheses
-            flightData.origin = originText.replace(/[()]/g, '');
+            // find airline link, e.g. "/data/airlines/ua-ual" or "/data/airlines/axq"
+            const airlineLink = document.querySelector('a[href*="/data/airlines/"]');
+
+            if (airlineLink === null) {
+                console.warn('no airline link found');
+            } else {
+                const airlineSlug = airlineLink.getAttribute('href').split('/').pop();
+
+                // icao code always last three characters (sometimes iata code prefixes it)
+                flightData.airline = airlineSlug.slice(-3).toUpperCase(); // "UAL"
+            }
+
+            console.log(`airline: ${flightData.airline}`);
+        }
+
+        // flight origin and destination
+        {
+            // find airport links
+            const airportLinks = document.querySelectorAll('a[href*="/data/airports/"]');
+
+            if (airportLinks.length === 0) {
+                console.warn('no airport links found');
+            } else {
+                // extract airport codes, e.g. "/data/airports/lax" -> "LAX"
+                const airportCodes = Array.from(airportLinks, (link) => {
+                    const href = link.getAttribute('href');         // "https://.../data/airports/lax"
+                    return href.split('/').pop().toUpperCase();     // "LAX"
+                });
+
+                [flightData.origin, flightData.dest] = airportCodes; // "LAX", "EWR"
+            }
+
             console.log(`origin: ${flightData.origin}`);
-        }
-
-        // flight destination
-        {
-            let destText = flightRadar.dest.querySelector('small').textContent;
-            // remove parentheses
-            flightData.dest = destText.replace(/[()]/g, '');
             console.log(`dest: ${flightData.dest}`);
         }
 
